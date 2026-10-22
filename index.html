@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baja Bhais - Face of Change | Enterprise Command Center</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0c',
+                        darkCard: '#121218',
+                        darkCardHover: '#1a1a24',
+                        neonRed: '#ff2a2a',
+                        secondaryRed: '#dc2626',
+                        darkBorder: '#1e1e26',
+                        glassBg: 'rgba(18, 18, 24, 0.85)'
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS Styles -->
+    <style>
+        body {
+            background-color: #0a0a0c;
+            color: #e2e8f0;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a38;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff2a2a;
+        }
+
+        /* Neon Glow Effects */
+        .glow-red {
+            box-shadow: 0 0 20px rgba(255, 42, 42, 0.35);
+        }
+        .glow-red-sm {
+            box-shadow: 0 0 10px rgba(255, 42, 42, 0.25);
+        }
+        .text-glow-red {
+            text-shadow: 0 0 10px rgba(255, 42, 42, 0.6);
+        }
+        .border-glow {
+            border-color: rgba(255, 42, 42, 0.4);
+            box-shadow: inset 0 0 10px rgba(255, 42, 42, 0.1);
+        }
+
+        /* Cyber Glass Cards */
+        .cyber-card {
+            background: linear-gradient(135deg, rgba(18, 18, 24, 0.95) 0%, rgba(10, 10, 12, 0.98) 100%);
+            border: 1px solid #1e1e26;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .cyber-card:hover {
+            border-color: rgba(255, 42, 42, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Animated Grid Overlay */
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+
+        /* Scanline Effect for Futuristic feel */
+        .scanline {
+            width: 100%;
+            height: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(255, 42, 42, 0.3), transparent);
+            opacity: 0.7;
+            animation: scanline 6s linear infinite;
+        }
+        @keyframes scanline {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Loading Screen Pulse */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 2.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-darkBase min-h-screen flex flex-col relative bg-grid-pattern">
+
+    <!-- Fixed Scanline Overlay -->
+    <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+        <div class="scanline"></div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 1. LOADING / SPLASH SCREEN                 -->
+    <!-- ========================================== -->
+    <div id="loadingScreen" class="fixed inset-0 z-50 bg-darkBase flex flex-col items-center justify-center p-6 transition-opacity duration-700">
+        <div class="max-w-xl w-full text-center flex flex-col items-center">
+            
+            <!-- Vehicle Showcase Frame -->
+            <div class="relative mb-8 rounded-2xl p-2 bg-gradient-to-b from-darkBorder to-neonRed/30 border border-neonRed/40 glow-red animate-pulse-glow overflow-hidden">
+                <img src="image_3e7a64.png" alt="Baja Bhais Vehicle" class="w-full h-64 sm:h-72 object-cover rounded-xl shadow-2xl filter brightness-95 contrast-105" onerror="this.src='https://placehold.co/600x400/121218/ff2a2a?text=Baja+Bhais+Vehicle'">
+                <div class="absolute inset-0 bg-gradient-to-t from-darkBase via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-3 left-0 right-0 text-center">
+                    <span class="inline-block px-3 py-1 bg-neonRed/20 border border-neonRed/60 rounded-full text-xs font-orbitron tracking-widest text-neonRed uppercase">
+                        NE Factory Launching • 4,000 Units Target
+                    </span>
+                </div>
+            </div>
+
+            <!-- Tagline and Title -->
+            <h1 class="text-3xl sm:text-4xl font-black font-orbitron text-white tracking-wider mb-2">
+                BAJA BHAIS
+            </h1>
+            <p class="text-neonRed font-rajdhani text-xl sm:text-2xl tracking-widest font-bold uppercase mb-8 text-glow-red">
+                FACE OF CHANGE
+            </p>
+
+            <!-- Tech Progress Bar -->
+            <div class="w-full bg-darkCard border border-darkBorder rounded-full h-3 p-0.5 overflow-hidden mb-3 relative">
+                <div id="loaderBar" class="bg-gradient-to-r from-secondaryRed via-neonRed to-red-400 h-full rounded-full transition-all duration-300 w-0 glow-red-sm"></div>
+            </div>
+
+            <!-- Status Text -->
+            <div class="flex justify-between w-full text-xs font-mono text-gray-400 px-1">
+                <span id="loaderStatus">Initializing Regional Hubs & AI Assessment Engine...</span>
+                <span id="loaderPercentage" class="text-neonRed font-bold">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MAIN APPLICATION CONTAINER                 -->
+    <!-- ========================================== -->
+    <div id="appContainer" class="flex-1 flex flex-col min-h-screen opacity-0 transition-opacity duration-700">
+
+        <!-- HEADER BAR -->
+        <header class="sticky top-0 z-40 bg-darkCard/90 backdrop-blur-md border-b border-darkBorder px-4 lg:px-8 py-3 flex items-center justify-between">
+            
+            <!-- Left Branding Area with Logo -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-3 bg-darkBase/80 p-1.5 px-3 rounded-xl border border-darkBorder">
+                    <img src="image_3e7a28.png" alt="Baja Bhais Logo" class="h-9 w-auto object-contain" onerror="this.src='https://placehold.co/120x40/0a0a0c/ff2a2a?text=Baja+Bhais'">
+                </div>
+                <div class="hidden sm:block">
+                    <div class="font-orbitron font-extrabold text-white text-lg tracking-wider flex items-center">
+                        BAJA BHAIS
+                        <span class="ml-2 px-2 py-0.5 text-[10px] bg-neonRed/10 border border-neonRed/40 text-neonRed rounded font-mono">HQ OPERATIONAL</span>
+                    </div>
+                    <div class="text-xs text-gray-400 font-rajdhani tracking-wider">ENTERPRISE COMMAND & RISK MITIGATION ENGINE</div>
+                </div>
+            </div>
+
+            <!-- Right Controls & Active Role Switcher -->
+            <div class="flex items-center space-x-3 sm:space-x-5">
+                
+                <!-- System Live Timestamp -->
+                <div class="hidden lg:flex flex-col text-right font-mono text-xs text-gray-400 border-r border-darkBorder pr-4">
+                    <span id="liveTime" class="text-white font-bold">00:00:00 UTC</span>
+                    <span class="text-gray-500 text-[10px]">NORTHEAST FACTORY SYNC ACTIVE</span>
+                </div>
+
+                <!-- Notifications Trigger Bell -->
+                <button onclick="toggleAlertDrawer()" class="relative p-2.5 rounded-xl bg-darkBase border border-darkBorder hover:border-neonRed text-gray-300 hover:text-white transition">
+                    <i class="fa-solid fa-bell text-lg"></i>
+                    <span id="unreadAlertCount" class="absolute -top-1 -right-1 bg-neonRed text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center animate-pulse glow-red-sm">
+                        3
+                    </span>
+                </button>
+
+                <!-- Active Role Selector Dropdown -->
+                <div class="relative">
+                    <label class="block text-[10px] uppercase font-mono text-gray-400 mb-0.5">Active Executive Role</label>
+                    <div class="relative flex items-center">
+                        <select id="roleSelector" onchange="triggerRoleAuth(this.value)" class="bg-darkBase border border-neonRed/40 text-white text-xs font-rajdhani font-bold py-1.5 pl-8 pr-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-neonRed cursor-pointer glow-red-sm">
+                            <option value="maniatesh">Maniatesh (Manufacturing Head)</option>
+                            <option value="sai">Sai Shripal (Finance Head)</option>
+                            <option value="manimaran">Manimaran (Logistics Head)</option>
+                            <option value="jaishwin">Jaishwin (Design Head)</option>
+                        </select>
+                        <span id="headerLockBadge" class="absolute left-2.5 text-xs text-neonRed pointer-events-none">🔒</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SUB-NAV / MAIN NAVIGATION TABS -->
+        <nav class="bg-darkBase/95 border-b border-darkBorder px-4 lg:px-8 py-2 overflow-x-auto">
+            <div class="flex space-x-2 min-w-max">
+                <button onclick="switchTab('operations')" id="tab-operations" class="tab-btn active px-4 py-2 rounded-lg font-orbitron text-xs font-bold transition flex items-center space-x-2 bg-neonRed text-white shadow-lg glow-red-sm">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Regional Operations</span>
+                </button>
+                <button onclick="switchTab('ai-risk')" id="tab-ai-risk" class="tab-btn px-4 py-2 rounded-lg font-orbitron text-xs font-bold text-gray-400 hover:text-white hover:bg-darkCard transition flex items-center space-x-2 border border-transparent">
+                    <i class="fa-solid fa-brain text-neonRed"></i>
+                    <span>AI Risk & Mitigation</span>
+                </button>
+                <button onclick="switchTab('notifications')" id="tab-notifications" class="tab-btn px-4 py-2 rounded-lg font-orbitron text-xs font-bold text-gray-400 hover:text-white hover:bg-darkCard transition flex items-center space-x-2 border border-transparent">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Role Alerts Hub</span>
+                </button>
+                <button onclick="switchTab('design')" id="tab-design" class="tab-btn px-4 py-2 rounded-lg font-orbitron text-xs font-bold text-gray-400 hover:text-white hover:bg-darkCard transition flex items-center space-x-2 border border-transparent">
+                    <i class="fa-solid fa-car"></i>
+                    <span>Vehicle & Design Hub</span>
+                </button>
+                <button onclick="switchTab('analytics')" id="tab-analytics" class="tab-btn px-4 py-2 rounded-lg font-orbitron text-xs font-bold text-gray-400 hover:text-white hover:bg-darkCard transition flex items-center space-x-2 border border-transparent">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Predictive Analytics</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT VIEW AREA -->
+        <main class="flex-1 p-4 lg:p-8 max-w-7xl w-full mx-auto">
+
+            <!-- ================================================== -->
+            <!-- TAB 1: REGIONAL OPERATIONS DASHBOARD (4000 UNITS)  -->
+            <!-- ================================================== -->
+            <section id="view-operations" class="tab-view space-y-6">
+                
+                <!-- Regional Hub Filter Bar -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-darkCard p-4 rounded-xl border border-darkBorder">
+                    <div>
+                        <h2 class="text-xl font-black font-orbitron text-white flex items-center">
+                            REGIONAL PRODUCTION & DISTRIBUTION NETWORK
+                        </h2>
+                        <p class="text-xs text-gray-400">Master Target: <span class="text-neonRed font-bold">4,000 Buggy Units / Year</span> across Indian Zones</p>
+                    </div>
+
+                    <!-- Region Filter Pills -->
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterRegion('all')" class="region-pill active px-3 py-1.5 rounded-lg text-xs font-rajdhani font-bold bg-neonRed text-white border border-neonRed">All Regions</button>
+                        <button onclick="filterRegion('northeast')" class="region-pill px-3 py-1.5 rounded-lg text-xs font-rajdhani font-bold bg-darkBase text-gray-300 border border-darkBorder hover:border-neonRed">Northeast Hub (Assam Plant)</button>
+                        <button onclick="filterRegion('north')" class="region-pill px-3 py-1.5 rounded-lg text-xs font-rajdhani font-bold bg-darkBase text-gray-300 border border-darkBorder hover:border-neonRed">North India</button>
+                        <button onclick="filterRegion('south')" class="region-pill px-3 py-1.5 rounded-lg text-xs font-rajdhani font-bold bg-darkBase text-gray-300 border border-darkBorder hover:border-neonRed">South India</button>
+                        <button onclick="filterRegion('west')" class="region-pill px-3 py-1.5 rounded-lg text-xs font-rajdhani font-bold bg-darkBase text-gray-300 border border-darkBorder hover:border-neonRed">West India</button>
+                        <button onclick="filterRegion('east')" class="region-pill px-3 py-1.5 rounded-lg text-xs font-rajdhani font-bold bg-darkBase text-gray-300 border border-darkBorder hover:border-neonRed">East & Central</button>
+                    </div>
+                </div>
+
+                <!-- KPI CARDS GRID -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- KPI 1 -->
+                    <div class="cyber-card p-5 rounded-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-neonRed/10 rounded-full blur-2xl"></div>
+                        <div class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-1">Annual Target</div>
+                        <div class="text-3xl font-black font-orbitron text-white">4,000 <span class="text-xs font-normal text-gray-400">Units</span></div>
+                        <div class="mt-3 flex items-center text-xs text-green-400 font-rajdhani font-bold">
+                            <i class="fa-solid fa-circle-check mr-1.5"></i> Target Set for FY 2026-27
+                        </div>
+                    </div>
+
+                    <!-- KPI 2 -->
+                    <div class="cyber-card p-5 rounded-xl relative overflow-hidden">
+                        <div class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-1">Delivered YTD</div>
+                        <div class="text-3xl font-black font-orbitron text-neonRed">1,840 <span class="text-xs font-normal text-gray-400">Units</span></div>
+                        <div class="mt-3 flex items-center text-xs text-neonRed font-rajdhani font-bold">
+                            <i class="fa-solid fa-chart-line mr-1.5"></i> 46.0% Total Annual Goal Achieved
+                        </div>
+                    </div>
+
+                    <!-- KPI 3 -->
+                    <div class="cyber-card p-5 rounded-xl relative overflow-hidden">
+                        <div class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-1">In Transit / Transit Warehouses</div>
+                        <div class="text-3xl font-black font-orbitron text-white">620 <span class="text-xs font-normal text-gray-400">Units</span></div>
+                        <div class="mt-3 flex items-center text-xs text-yellow-400 font-rajdhani font-bold">
+                            <i class="fa-solid fa-truck-fast mr-1.5"></i> Active Rail & Road Corridors
+                        </div>
+                    </div>
+
+                    <!-- KPI 4 -->
+                    <div class="cyber-card p-5 rounded-xl relative overflow-hidden">
+                        <div class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-1">NE Factory Monthly Run-Rate</div>
+                        <div class="text-3xl font-black font-orbitron text-white">350 <span class="text-xs font-normal text-gray-400">Units/Mo</span></div>
+                        <div class="mt-3 flex items-center text-xs text-sky-400 font-rajdhani font-bold">
+                            <i class="fa-solid fa-industry mr-1.5"></i> Operational Efficiency 92.4%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REGIONAL BREAKDOWN CARDS -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="regionalCardsGrid">
+                    
+                    <!-- Northeast Factory Hub -->
+                    <div class="regional-card cyber-card p-6 rounded-2xl border-l-4 border-l-neonRed" data-region="northeast">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="text-[10px] font-mono text-neonRed uppercase tracking-wider px-2 py-0.5 bg-neonRed/10 border border-neonRed/30 rounded">Primary Manufacturing Hub</span>
+                                <h3 class="text-lg font-bold font-orbitron text-white mt-1">Northeast Factory (Assam)</h3>
+                            </div>
+                            <i class="fa-solid fa-industry text-2xl text-neonRed"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">Core assembly & component synthesis facility catering to pan-India distribution routes.</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-400">Production Completed:</span>
+                                    <span class="font-bold text-white">2,100 / 4,000 Target</span>
+                                </div>
+                                <div class="w-full bg-darkBase h-2 rounded-full overflow-hidden border border-darkBorder">
+                                    <div class="bg-neonRed h-full rounded-full" style="width: 52.5%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs pt-2 border-t border-darkBorder">
+                                <div><span class="text-gray-500">Active Shift Head:</span> <span class="text-gray-200 font-bold block">Maniatesh</span></div>
+                                <div><span class="text-gray-500">Plant Status:</span> <span class="text-green-400 font-bold block">OPTIMAL</span></div>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('ai-risk')" class="w-full py-2 bg-darkBase hover:bg-neonRed/20 text-neonRed hover:text-white border border-neonRed/40 rounded-lg text-xs font-rajdhani font-bold transition">
+                            Simulate NE Logistics Scenario &rarr;
+                        </button>
+                    </div>
+
+                    <!-- North India Hub -->
+                    <div class="regional-card cyber-card p-6 rounded-2xl" data-region="north">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider px-2 py-0.5 bg-darkBase border border-darkBorder rounded">Regional Sales Zone</span>
+                                <h3 class="text-lg font-bold font-orbitron text-white mt-1">North India Region</h3>
+                            </div>
+                            <i class="fa-solid fa-map-location-dot text-2xl text-gray-400"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">Delhi NCR, Punjab, HP & Off-Road Racing All-Terrain Clubs Target Market.</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-400">Quota Allocation:</span>
+                                    <span class="font-bold text-white">1,100 / 1,200 Units</span>
+                                </div>
+                                <div class="w-full bg-darkBase h-2 rounded-full overflow-hidden border border-darkBorder">
+                                    <div class="bg-red-500 h-full rounded-full" style="width: 91%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs pt-2 border-t border-darkBorder">
+                                <div><span class="text-gray-500">Main Hub:</span> <span class="text-gray-200 font-bold block">NCR Logistics Yard</span></div>
+                                <div><span class="text-gray-500">Demand Level:</span> <span class="text-neonRed font-bold block">VERY HIGH (+18%)</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- South India Hub -->
+                    <div class="regional-card cyber-card p-6 rounded-2xl" data-region="south">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider px-2 py-0.5 bg-darkBase border border-darkBorder rounded">Regional Sales Zone</span>
+                                <h3 class="text-lg font-bold font-orbitron text-white mt-1">South India Region</h3>
+                            </div>
+                            <i class="fa-solid fa-compass text-2xl text-gray-400"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">Chennai, Bengaluru & Hyderabad hubs focusing on motorsports & institutional sales.</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-400">Quota Allocation:</span>
+                                    <span class="font-bold text-white">950 / 1,100 Units</span>
+                                </div>
+                                <div class="w-full bg-darkBase h-2 rounded-full overflow-hidden border border-darkBorder">
+                                    <div class="bg-emerald-500 h-full rounded-full" style="width: 86%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs pt-2 border-t border-darkBorder">
+                                <div><span class="text-gray-500">Main Hub:</span> <span class="text-gray-200 font-bold block">Chennai Port Node</span></div>
+                                <div><span class="text-gray-500">Fulfillment:</span> <span class="text-green-400 font-bold block">ON SCHEDULE</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- West India Hub -->
+                    <div class="regional-card cyber-card p-6 rounded-2xl" data-region="west">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider px-2 py-0.5 bg-darkBase border border-darkBorder rounded">Regional Sales Zone</span>
+                                <h3 class="text-lg font-bold font-orbitron text-white mt-1">West India Region</h3>
+                            </div>
+                            <i class="fa-solid fa-warehouse text-2xl text-gray-400"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">Maharashtra & Gujarat off-road buggy deployment and extreme endurance testing.</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-400">Quota Allocation:</span>
+                                    <span class="font-bold text-white">720 / 900 Units</span>
+                                </div>
+                                <div class="w-full bg-darkBase h-2 rounded-full overflow-hidden border border-darkBorder">
+                                    <div class="bg-amber-500 h-full rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs pt-2 border-t border-darkBorder">
+                                <div><span class="text-gray-500">Main Hub:</span> <span class="text-gray-200 font-bold block">Pune Tech Depot</span></div>
+                                <div><span class="text-gray-500">Dispatch Status:</span> <span class="text-yellow-400 font-bold block">MONITORING</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- East India & Central Hub -->
+                    <div class="regional-card cyber-card p-6 rounded-2xl" data-region="east">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase tracking-wider px-2 py-0.5 bg-darkBase border border-darkBorder rounded">Regional Sales Zone</span>
+                                <h3 class="text-lg font-bold font-orbitron text-white mt-1">East & Central Zone</h3>
+                            </div>
+                            <i class="fa-solid fa-truck-ramp-box text-2xl text-gray-400"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">Kolkata, Odisha & MP distribution corridors connected directly via NE factory logistics.</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-400">Quota Allocation:</span>
+                                    <span class="font-bold text-white">610 / 800 Units</span>
+                                </div>
+                                <div class="w-full bg-darkBase h-2 rounded-full overflow-hidden border border-darkBorder">
+                                    <div class="bg-neonRed h-full rounded-full" style="width: 76%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs pt-2 border-t border-darkBorder">
+                                <div><span class="text-gray-500">Main Hub:</span> <span class="text-gray-200 font-bold block">Kolkata Corridor</span></div>
+                                <div><span class="text-gray-500">Fulfillment:</span> <span class="text-green-400 font-bold block">STABLE</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================================================== -->
+            <!-- TAB 2: AI-ASSISTED RISK ASSESSMENT & MITIGATION   -->
+            <!-- ================================================== -->
+            <section id="view-ai-risk" class="tab-view space-y-6 hidden">
+                
+                <!-- AI Engine Banner -->
+                <div class="cyber-card p-6 rounded-2xl border border-neonRed/40 bg-gradient-to-r from-darkCard via-darkCard to-neonRed/10 relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                        <div>
+                            <div class="flex items-center space-x-2 text-neonRed font-mono text-xs font-bold mb-1">
+                                <i class="fa-solid fa-brain animate-pulse"></i>
+                                <span>BAJA BHAIS AI RISK INTELLIGENCE SUITE v4.2</span>
+                            </div>
+                            <h2 class="text-2xl font-black font-orbitron text-white">AI Scenario Modeling & Team Strategy Engine</h2>
+                            <p class="text-xs text-gray-300 max-w-2xl mt-1">
+                                Generates predictive simulations using public market data, commodity trends, and historical disruption factors to quantify business impacts and formulate executive mitigation strategies.
+                            </p>
+                        </div>
+                        <button onclick="runCustomAiAnalysis()" class="px-5 py-3 bg-neonRed hover:bg-red-600 text-white font-orbitron text-xs font-bold rounded-xl shadow-lg glow-red-sm transition flex items-center space-x-2">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Run AI Scenario Audit</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SCENARIO SELECTOR & INPUT SIMULATOR -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Scenario Picker -->
+                    <div class="cyber-card p-5 rounded-2xl space-y-4">
+                        <h3 class="text-sm font-bold font-orbitron text-white flex items-center">
+                            <i class="fa-solid fa-sliders text-neonRed mr-2"></i>
+                            Select Corporate Business Scenario
+                        </h3>
+
+                        <div class="space-y-2">
+                            <label onclick="selectScenario('monsoon')" class="scenario-option block p-3 rounded-xl border border-neonRed bg-neonRed/10 cursor-pointer hover:border-neonRed transition">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold font-orbitron text-white">Northeast Monsoon Disruption</span>
+                                    <span class="text-[10px] bg-neonRed text-white px-2 py-0.5 rounded font-mono">HIGH RISK</span>
+                                </div>
+                                <p class="text-[11px] text-gray-300">Highway & rail transit bottlenecks connecting Assam factory to central distribution hubs.</p>
+                            </label>
+
+                            <label onclick="selectScenario('commodity')" class="scenario-option block p-3 rounded-xl border border-darkBorder bg-darkBase cursor-pointer hover:border-neonRed transition">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold font-orbitron text-white">Steel & Lithium Commodity Spike</span>
+                                    <span class="text-[10px] bg-yellow-500 text-black px-2 py-0.5 rounded font-mono">MED RISK</span>
+                                </div>
+                                <p class="text-[11px] text-gray-300">Unprecedented 24% surge in raw tubular steel and battery component prices.</p>
+                            </label>
+
+                            <label onclick="selectScenario('suspension')" class="scenario-option block p-3 rounded-xl border border-darkBorder bg-darkBase cursor-pointer hover:border-neonRed transition">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold font-orbitron text-white">High-Altitude Stress Fatigue</span>
+                                    <span class="text-[10px] bg-blue-500 text-white px-2 py-0.5 rounded font-mono">DESIGN RISK</span>
+                                </div>
+                                <p class="text-[11px] text-gray-300">Extreme terrain shock absorber stress under maximum payload during Northern trials.</p>
+                            </label>
+                        </div>
+
+                        <!-- Custom Prompt Simulation Query -->
+                        <div class="pt-3 border-t border-darkBorder">
+                            <label class="block text-xs font-mono text-gray-400 mb-2">Custom AI Prompt Simulation:</label>
+                            <div class="flex space-x-2">
+                                <input id="customPromptInput" type="text" placeholder="e.g. Simulate 15% import tax hike on shock absorbers..." class="w-full bg-darkBase border border-darkBorder text-xs text-white p-2 rounded-lg focus:outline-none focus:border-neonRed">
+                                <button onclick="runCustomPrompt()" class="bg-darkBorder hover:bg-neonRed text-white px-3 py-2 rounded-lg text-xs font-bold transition">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI ANALYSIS DISPLAY PANEL -->
+                    <div class="lg:col-span-2 cyber-card p-6 rounded-2xl flex flex-col justify-between">
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-4 pb-3 border-b border-darkBorder">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-neonRed animate-ping"></div>
+                                    <h3 id="activeScenarioTitle" class="text-lg font-bold font-orbitron text-white">Northeast Monsoon Logistics Disruption</h3>
+                                </div>
+                                <span id="activeRiskScore" class="text-sm font-mono font-bold text-neonRed bg-neonRed/10 border border-neonRed/30 px-3 py-1 rounded-full">
+                                    Likelihood: 84% • Severe
+                                </span>
+                            </div>
+
+                            <!-- Impact Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-darkBase p-3 rounded-xl border border-darkBorder">
+                                    <div class="text-[10px] text-gray-400 uppercase font-mono">Financial Cost Risk</div>
+                                    <div id="costImpact" class="text-lg font-bold font-orbitron text-neonRed mt-1">₹ 1.45 Cr / Month</div>
+                                </div>
+                                <div class="bg-darkBase p-3 rounded-xl border border-darkBorder">
+                                    <div class="text-[10px] text-gray-400 uppercase font-mono">Production Output Impact</div>
+                                    <div id="productionImpact" class="text-lg font-bold font-orbitron text-yellow-400 mt-1">-320 Units Delay</div>
+                                </div>
+                                <div class="bg-darkBase p-3 rounded-xl border border-darkBorder">
+                                    <div class="text-[10px] text-gray-400 uppercase font-mono">Primary Affected Dept</div>
+                                    <div id="deptImpact" class="text-lg font-bold font-orbitron text-white mt-1">Logistics & Supply</div>
+                                </div>
+                            </div>
+
+                            <!-- Executive Mitigation Strategy Breakdown -->
+                            <div class="space-y-3">
+                                <h4 class="text-xs font-bold font-orbitron text-gray-300 uppercase tracking-wider">
+                                    Team Decision & AI-Assisted Mitigation Strategy:
+                                </h4>
+
+                                <div id="mitigationSteps" class="space-y-2 text-xs">
+                                    <!-- Dynamic content inserted by JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Export / Sign-off Action Bar -->
+                        <div class="mt-6 pt-4 border-t border-darkBorder flex flex-wrap items-center justify-between gap-3">
+                            <div class="text-xs text-gray-400">
+                                Decision Sign-off Required by: <span id="signoffRoles" class="text-white font-bold">Manimaran (Logistics) & Maniatesh (Mfg)</span>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button onclick="exportStrategyReport()" class="px-3.5 py-2 bg-darkBase hover:bg-darkBorder text-gray-200 hover:text-white rounded-lg text-xs font-bold transition flex items-center space-x-2 border border-darkBorder hover:border-neonRed">
+                                    <i class="fa-solid fa-file-arrow-down text-neonRed"></i>
+                                    <span>Export Brief</span>
+                                </button>
+                                <button id="approveStrategyBtn" onclick="acknowledgeScenario()" class="px-4 py-2 bg-neonRed hover:bg-red-600 text-white rounded-lg text-xs font-bold font-orbitron transition glow-red-sm flex items-center space-x-2">
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                    <span id="approveBtnText">Approve Strategic Mitigation</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================== -->
+            <!-- TAB 3: ROLE-BASED ACCESS & NOTIFICATIONS HUB       -->
+            <!-- ================================================== -->
+            <section id="view-notifications" class="tab-view space-y-6 hidden">
+                
+                <!-- Role Header Banner -->
+                <div class="cyber-card p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <div class="text-xs font-mono text-neonRed uppercase mb-1">SECURED EXECUTIVE MANAGEMENT PORTAL</div>
+                        <h2 class="text-2xl font-black font-orbitron text-white flex items-center">
+                            Role Notifications & Direct Alert Center
+                        </h2>
+                        <p class="text-xs text-gray-400 mt-1">
+                            Filtering view for active logged-in executive: <span id="currentRoleTitleDisplay" class="text-neonRed font-bold">Maniatesh (Manufacturing Head)</span>
+                        </p>
+                    </div>
+
+                    <!-- Filter buttons for department alerts -->
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterAlerts('my-role')" class="alert-filter-pill active px-3 py-1.5 bg-neonRed text-white text-xs font-bold rounded-lg font-rajdhani">My Role Alerts</button>
+                        <button onclick="filterAlerts('all')" class="alert-filter-pill px-3 py-1.5 bg-darkBase text-gray-300 text-xs font-bold rounded-lg font-rajdhani border border-darkBorder hover:border-neonRed">All System Alerts</button>
+                    </div>
+                </div>
+
+                <!-- ALERTS FEED LIST -->
+                <div class="space-y-4" id="alertsContainer">
+                    <!-- Dynamic Alert items injected via JS -->
+                </div>
+            </section>
+
+            <!-- ================================================== -->
+            <!-- TAB 4: DESIGN & VEHICLE SPECIFICATIONS             -->
+            <!-- ================================================== -->
+            <section id="view-design" class="tab-view space-y-6 hidden">
+                
+                <!-- Hero Showcase for Baja Bhais Vehicle -->
+                <div class="cyber-card rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 border border-darkBorder">
+                    
+                    <!-- Vehicle Image Display with Left Corner Logo Integration -->
+                    <div class="relative min-h-[320px] bg-darkBase flex items-center justify-center p-4">
+                        <img src="image_3e7a64.png" alt="Baja Bhais Buggy" class="w-full h-full object-cover rounded-xl shadow-2xl filter contrast-105" onerror="this.src='https://placehold.co/600x400/121218/ff2a2a?text=Baja+Bhais+Vehicle'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBase via-transparent to-transparent opacity-60"></div>
+                        
+                        <!-- Top Left Corner Overlay Logo Badge -->
+                        <div class="absolute top-4 left-4 bg-darkBase/90 p-2 px-3 rounded-xl border border-neonRed/40 backdrop-blur-md flex items-center space-x-2">
+                            <img src="image_3e7a28.png" alt="Baja Bhais Logo" class="h-6 w-auto" onerror="this.src='https://placehold.co/80x30/0a0a0c/ff2a2a?text=BB'">
+                            <span class="text-[10px] font-orbitron font-bold text-white tracking-widest">OFFICIAL SPEC</span>
+                        </div>
+
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center text-xs text-white bg-darkCard/80 backdrop-blur-md p-3 rounded-xl border border-darkBorder">
+                            <div>
+                                <span class="text-gray-400 block text-[10px] uppercase font-mono">Model Code</span>
+                                <span class="font-orbitron font-bold text-neonRed">BAJA-BHAIS EXTREME</span>
+                            </div>
+                            <span class="px-2.5 py-1 bg-green-500/20 text-green-400 border border-green-500/40 rounded text-[10px] font-mono font-bold">HOMOLOGATED</span>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Specs Summary -->
+                    <div class="p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 text-xs font-mono text-neonRed mb-1">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                                <span>DESIGN HEAD: JAISHWIN</span>
+                            </div>
+                            <h3 class="text-2xl font-black font-orbitron text-white mb-2">High-Endurance All-Terrain Buggy</h3>
+                            <p class="text-xs text-gray-400 mb-6">
+                                Purpose-built in Northeast India to tackle extreme topographies, high-payload endurance courses, and harsh climate conditions.
+                            </p>
+
+                            <!-- Specs Grid -->
+                            <div class="grid grid-cols-2 gap-4 text-xs">
+                                <div class="bg-darkBase p-3 rounded-xl border border-darkBorder">
+                                    <span class="text-gray-500 block text-[10px] uppercase">Chassis & Cage</span>
+                                    <span class="font-bold text-white font-orbitron">Tubular Seamless Chromoly AISI 4130</span>
+                                </div>
+                                <div class="bg-darkBase p-3 rounded-xl border border-darkBorder">
+                                    <span class="text-gray-500 block text-[10px] uppercase">Powertrain</span>
+                                    <span class="font-bold text-white font-orbitron">10HP Briggs & Stratton 305cc</span>
+                                </div>
+                                <div class="bg-darkBase p-3 rounded-xl border border-darkBorder">
+                                    <span class="text-gray-500 block text-[10px] uppercase">Suspension Travel</span>
+                                    <span class="font-bold text-neonRed font-orbitron">14.5" Double A-Arm Front / Rear</span>
+                                </div>
+                                <div class="bg-darkBase p-3 rounded-xl border border-darkBorder">
+                                    <span class="text-gray-500 block text-[10px] uppercase">Curb Weight</span>
+                                    <span class="font-bold text-white font-orbitron">158 kg (Lightweight Spec)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-darkBorder flex items-center justify-between">
+                            <span class="text-xs text-gray-400 font-mono">CAD Telemetry Status: <span class="text-green-400 font-bold">100% Verified</span></span>
+                            <button onclick="alert('Downloading CAD Specification Package v3.8...')" class="px-4 py-2 bg-darkBase hover:bg-neonRed text-white rounded-lg text-xs font-bold font-orbitron border border-darkBorder hover:border-neonRed transition">
+                                Download Blueprint Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAD Revisions & Test Logs -->
+                <div class="cyber-card p-6 rounded-2xl space-y-4">
+                    <h3 class="text-lg font-bold font-orbitron text-white">Engineering Revisions & Structural Test Telemetry</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-darkBase text-gray-400 font-mono uppercase text-[10px] border-b border-darkBorder">
+                                <tr>
+                                    <th class="p-3">Component</th>
+                                    <th class="p-3">Revision #</th>
+                                    <th class="p-3">Stress Rating</th>
+                                    <th class="p-3">Design Lead</th>
+                                    <th class="p-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-darkBorder font-rajdhani font-semibold text-gray-200">
+                                <tr>
+                                    <td class="p-3 text-white font-bold">Front Suspension Wishbone</td>
+                                    <td class="p-3 font-mono">v4.1</td>
+                                    <td class="p-3 text-green-400">4.8x FEA Safety Margin</td>
+                                    <td class="p-3">Jaishwin</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 bg-green-500/10 text-green-400 border border-green-500/30 rounded text-[10px]">APPROVED</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 text-white font-bold">Transmission Gearbox Housing</td>
+                                    <td class="p-3 font-mono">v3.9</td>
+                                    <td class="p-3 text-yellow-400">3.2x Thermal Load Rating</td>
+                                    <td class="p-3">Jaishwin</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 rounded text-[10px]">TESTING</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 text-white font-bold">Chassis Main Roll Hoop</td>
+                                    <td class="p-3 font-mono">v5.0</td>
+                                    <td class="p-3 text-green-400">5.2x Impact Safety Factor</td>
+                                    <td class="p-3">Jaishwin</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 bg-green-500/10 text-green-400 border border-green-500/30 rounded text-[10px]">APPROVED</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================== -->
+            <!-- TAB 5: PREDICTIVE ANALYTICS & CHARTS               -->
+            <!-- ================================================== -->
+            <section id="view-analytics" class="tab-view space-y-6 hidden">
+                
+                <div class="cyber-card p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h2 class="text-2xl font-black font-orbitron text-white">Predictive Performance & Forecasting</h2>
+                        <p class="text-xs text-gray-400 mt-1">AI-assisted statistical projection for annual target of 4,000 units.</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button onclick="renderCharts()" class="px-3 py-1.5 bg-darkBase hover:bg-darkBorder text-xs text-neonRed border border-neonRed/30 rounded-lg font-mono">
+                            <i class="fa-solid fa-rotate mr-1"></i> Refresh Graphs
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    
+                    <!-- Chart 1: Production Trajectory -->
+                    <div class="cyber-card p-6 rounded-2xl space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-sm font-bold font-orbitron text-white">Quarterly Production vs 4,000 Unit Goal</h3>
+                            <span class="text-[10px] font-mono text-neonRed bg-neonRed/10 px-2 py-0.5 rounded">Interactive Canvas</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Quarterly unit build progress and projected final quarter sprint.</p>
+                        <div class="relative h-64 w-full pt-2">
+                            <canvas id="productionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Chart 2: Regional Share Pie Chart -->
+                    <div class="cyber-card p-6 rounded-2xl space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-sm font-bold font-orbitron text-white">Regional Sales Distribution Share</h3>
+                            <span class="text-[10px] font-mono text-neonRed bg-neonRed/10 px-2 py-0.5 rounded">Pan-India Quota</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Distribution volume allocation per Indian territory.</p>
+                        <div class="relative h-64 w-full pt-2">
+                            <canvas id="distributionChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER BAR -->
+        <footer class="bg-darkCard border-t border-darkBorder py-4 px-6 text-center text-xs text-gray-500 font-mono">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div>
+                    &copy; 2026 <span class="text-white font-bold">Baja Bhais Enterprise</span>. All Rights Reserved.
+                </div>
+                <div class="flex space-x-4 text-gray-400 text-[11px]">
+                    <span>NE Factory Hub: Assam, India</span>
+                    <span>•</span>
+                    <span class="text-neonRed font-bold">Target: 4,000 Buggies/Year</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ================================================== -->
+    <!-- ROLE SECURITY AUTHENTICATION MODAL                 -->
+    <!-- ================================================== -->
+    <div id="securityModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="cyber-card p-6 rounded-2xl max-w-sm w-full border border-neonRed/50 shadow-2xl text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-neonRed/10 rounded-full blur-xl"></div>
+            
+            <!-- Animated Lock Display -->
+            <div id="modalLockIcon" class="text-5xl mb-3 transition-all duration-500 inline-block transform">
+                🔒
+            </div>
+
+            <h3 class="text-lg font-bold font-orbitron text-white">Security Authentication</h3>
+            <p class="text-xs text-gray-400 mt-1 mb-4">
+                Accessing restricted profile for: <br>
+                <span id="targetRoleName" class="text-neonRed font-bold text-sm">Maniatesh (Manufacturing Head)</span>
+            </p>
+
+            <!-- PIN Input form -->
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-[10px] font-mono uppercase text-gray-400 mb-1">Enter 4-Digit Security PIN</label>
+                    <input id="pinInput" type="password" maxlength="4" placeholder="••••" autocomplete="off" oninput="handlePinTyping()" class="w-full text-center bg-darkBase border border-neonRed/40 rounded-xl py-3 text-2xl font-mono text-neonRed font-bold tracking-widest focus:outline-none focus:ring-2 focus:ring-neonRed glow-red-sm">
+                </div>
+
+                <div id="pinErrorMsg" class="text-xs text-neonRed font-mono hidden flex items-center justify-center space-x-1">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>Incorrect PIN. Enter '1234' to authenticate.</span>
+                </div>
+
+                <div class="flex space-x-2 pt-2">
+                    <button onclick="cancelRoleSwitch()" class="w-1/2 py-2.5 bg-darkBase border border-darkBorder hover:bg-darkBorder text-gray-300 rounded-xl text-xs font-bold transition">
+                        Cancel
+                    </button>
+                    <button onclick="validateRolePin()" class="w-1/2 py-2.5 bg-neonRed hover:bg-red-600 text-white rounded-xl text-xs font-bold font-orbitron transition glow-red-sm">
+                        Authenticate
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Banner -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 bg-darkCard border border-neonRed/60 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div id="toastIcon" class="w-8 h-8 rounded-lg bg-neonRed/20 text-neonRed border border-neonRed/40 flex items-center justify-center text-sm font-bold">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+            <div id="toastTitle" class="text-xs font-bold font-orbitron">Action Successful</div>
+            <div id="toastBody" class="text-[11px] text-gray-300">Operation executed.</div>
+        </div>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- JAVASCRIPT LOGIC ENGINE                           -->
+    <!-- ================================================== -->
+    <script>
+        // Global State & User Roles Data
+        const appState = {
+            activeRole: 'maniatesh',
+            pendingRole: 'maniatesh',
+            currentActiveScenario: 'monsoon',
+            scenarioApprovedStatus: { monsoon: false, commodity: false, suspension: false },
+            roles: {
+                maniatesh: { name: 'Maniatesh', title: 'Manufacturing Head', color: '#ff2a2a' },
+                sai: { name: 'Sai Shripal', title: 'Finance Head', color: '#38bdf8' },
+                manimaran: { name: 'Manimaran', title: 'Logistics Head', color: '#f59e0b' },
+                jaishwin: { name: 'Jaishwin', title: 'Design Head', color: '#10b981' }
+            },
+            alerts: [
+                {
+                    id: 101,
+                    roleTarget: 'maniatesh',
+                    roleName: 'Maniatesh (Mfg)',
+                    title: 'Assembly Line Speed Bottleneck',
+                    message: 'Raw material chassis tube welding at Northeast plant delayed by 4.2 hours due to power grid fluctuation.',
+                    time: '12 mins ago',
+                    severity: 'high',
+                    acknowledged: false,
+                    aiSuggestion: 'Engage back-up diesel generator grid & activate secondary automated robotic welding arm.'
+                },
+                {
+                    id: 102,
+                    roleTarget: 'sai',
+                    roleName: 'Sai Shripal (Finance)',
+                    title: 'Raw Material Variance Flag',
+                    message: 'Steel alloy procurement price increased by 11.4% for Q3 production batch at NE Plant.',
+                    time: '45 mins ago',
+                    severity: 'medium',
+                    acknowledged: false,
+                    aiSuggestion: 'Reallocate non-critical Q3 marketing budget to absorb steel variance without raising retail price.'
+                },
+                {
+                    id: 103,
+                    roleTarget: 'manimaran',
+                    roleName: 'Manimaran (Logistics)',
+                    title: 'Northeast Corridor Transit Warning',
+                    message: 'Heavy rain warning in Siliguri corridor likely to stall truck fleet carrying 120 buggies to North India.',
+                    time: '2 hours ago',
+                    severity: 'high',
+                    acknowledged: false,
+                    aiSuggestion: 'Reroute via Southern Bengal rail freight line to avoid land movement hazards.'
+                },
+                {
+                    id: 104,
+                    roleTarget: 'jaishwin',
+                    roleName: 'Jaishwin (Design)',
+                    title: 'Rear Shock Absorber FEA Deviation',
+                    message: 'High-speed test on rocky terrain showed 2% stress tolerance variance in rear suspension wishbone.',
+                    time: '3 hours ago',
+                    severity: 'medium',
+                    acknowledged: false,
+                    aiSuggestion: 'Increase wall thickness of Chromoly tube by 0.5mm for next batch iteration.'
+                }
+            ],
+            scenarios: {
+                monsoon: {
+                    title: "Northeast Monsoon Logistics Disruption",
+                    riskScore: "Likelihood: 84% • High Impact",
+                    cost: "₹ 1.45 Cr / Month",
+                    production: "-320 Units Delay",
+                    dept: "Logistics & Manufacturing",
+                    signoff: "Manimaran (Logistics) & Maniatesh (Mfg)",
+                    steps: [
+                        { role: "Manimaran (Logistics Head)", action: "Activate rail-freight fallback corridors from Guwahati to Kolkata and Delhi NCR to bypass flooded highway points." },
+                        { role: "Maniatesh (Mfg Head)", action: "Adjust Northeast factory buffer inventory storage to hold 250 completed buggies in secure dry yards." },
+                        { role: "Sai Shripal (Finance Head)", action: "Release ₹ 18 Lakhs emergency transit insurance reserve for expedited rail wagon booking." }
+                    ]
+                },
+                commodity: {
+                    title: "Steel & Lithium Commodity Price Spike",
+                    riskScore: "Likelihood: 65% • Financial Risk",
+                    cost: "₹ 2.10 Cr Total Impact",
+                    production: "Margin Dip 4.8%",
+                    dept: "Finance & Procurement",
+                    signoff: "Sai Shripal (Finance)",
+                    steps: [
+                        { role: "Sai Shripal (Finance Head)", action: "Lock in 6-month fixed price forward contract with domestic steel suppliers in India." },
+                        { role: "Jaishwin (Design Head)", action: "Optimize chassis geometry to reduce unnecessary steel mass by 3.5 kg per unit without sacrificing safety margin." }
+                    ]
+                },
+                suspension: {
+                    title: "High-Altitude Suspension Fatigue under Heavy Loads",
+                    riskScore: "Likelihood: 42% • Engineering Risk",
+                    cost: "₹ 45 Lakhs Recall Risk",
+                    production: "-50 Units Test Hold",
+                    dept: "Design & Quality",
+                    signoff: "Jaishwin (Design)",
+                    steps: [
+                        { role: "Jaishwin (Design Head)", action: "Upgrade rear shocks to dual-rate spring damper configuration for extreme off-road endurance." },
+                        { role: "Maniatesh (Mfg Head)", action: "Implement mandatory 100% ultrasonic weld inspection on suspension mounting brackets." }
+                    ]
+                }
+            }
+        };
+
+        // Initialize App on Window Load
+        window.onload = function() {
+            startLoadingScreen();
+            startLiveClock();
+            renderAlerts();
+            selectScenario('monsoon');
+
+            // Attach enter key event for PIN input
+            document.getElementById('pinInput').addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') validateRolePin();
+            });
+        };
+
+        // Security PIN Auth & Lock Animation Mechanics
+        function triggerRoleAuth(newRoleKey) {
+            appState.pendingRole = newRoleKey;
+            
+            // Revert dropdown display temporarily until PIN validated
+            document.getElementById('roleSelector').value = appState.activeRole;
+
+            const targetInfo = appState.roles[newRoleKey];
+            document.getElementById('targetRoleName').innerText = `${targetInfo.name} (${targetInfo.title})`;
+            document.getElementById('pinInput').value = '';
+            document.getElementById('pinErrorMsg').classList.add('hidden');
+            
+            // Reset lock icon to locked
+            const lockElem = document.getElementById('modalLockIcon');
+            lockElem.innerText = '🔒';
+            lockElem.classList.remove('scale-125', 'rotate-12');
+
+            document.getElementById('securityModal').classList.remove('hidden');
+            setTimeout(() => document.getElementById('pinInput').focus(), 100);
+        }
+
+        function handlePinTyping() {
+            const val = document.getElementById('pinInput').value;
+            if (val.length === 4) {
+                validateRolePin();
+            }
+        }
+
+        function validateRolePin() {
+            const inputVal = document.getElementById('pinInput').value;
+            const errorMsg = document.getElementById('pinErrorMsg');
+            const lockElem = document.getElementById('modalLockIcon');
+
+            if (inputVal === '1234') {
+                errorMsg.classList.add('hidden');
+                
+                // Animate lock emoji from locked to unlocked
+                lockElem.classList.add('scale-125', 'rotate-12');
+                lockElem.innerText = '🔓';
+
+                setTimeout(() => {
+                    appState.activeRole = appState.pendingRole;
+                    document.getElementById('roleSelector').value = appState.activeRole;
+                    document.getElementById('securityModal').classList.add('hidden');
+                    
+                    const activeRoleObj = appState.roles[appState.activeRole];
+                    document.getElementById('currentRoleTitleDisplay').innerText = `${activeRoleObj.name} (${activeRoleObj.title})`;
+                    
+                    showToast('Authenticated ✓', `Role switched to ${activeRoleObj.name}`);
+                    renderAlerts();
+                }, 600);
+            } else {
+                errorMsg.classList.remove('hidden');
+                lockElem.innerText = '🔒';
+                document.getElementById('pinInput').value = '';
+                document.getElementById('pinInput').focus();
+            }
+        }
+
+        function cancelRoleSwitch() {
+            document.getElementById('securityModal').classList.add('hidden');
+            document.getElementById('roleSelector').value = appState.activeRole;
+        }
+
+        // Export Brief Functionality
+        function exportStrategyReport() {
+            const activeScenario = appState.scenarios[appState.currentActiveScenario];
+            const currentRole = appState.roles[appState.activeRole];
+
+            let reportText = `====================================================\n`;
+            reportText += `       BAJA BHAIS - ENTERPRISE RISK & MITIGATION BRIEF\n`;
+            reportText += `====================================================\n\n`;
+            reportText += `Generated By: ${currentRole.name} (${currentRole.title})\n`;
+            reportText += `Date/Time: ${new Date().toUTCString()}\n`;
+            reportText += `Annual Factory Goal: 4,000 Buggies/Year (Northeast Hub)\n\n`;
+            reportText += `----------------------------------------------------\n`;
+            reportText += `SCENARIO: ${activeScenario.title.toUpperCase()}\n`;
+            reportText += `RISK LEVEL: ${activeScenario.riskScore}\n`;
+            reportText += `ESTIMATED COST IMPACT: ${activeScenario.cost}\n`;
+            reportText += `PRODUCTION IMPACT: ${activeScenario.production}\n`;
+            reportText += `PRIMARY AFFECTED DEPT: ${activeScenario.dept}\n`;
+            reportText += `REQUIRED SIGNOFF: ${activeScenario.signoff}\n`;
+            reportText += `----------------------------------------------------\n\n`;
+            reportText += `AI-ASSISTED RECOMMENDED MITIGATION ACTIONS:\n\n`;
+
+            activeScenario.steps.forEach((step, idx) => {
+                reportText += `${idx + 1}. [${step.role}]\n   ACTION: ${step.action}\n\n`;
+            });
+
+            reportText += `====================================================\n`;
+            reportText += `CONFIDENTIAL - BAJA BHAIS INTERNAL CORPORATE REPORT\n`;
+            reportText += `====================================================\n`;
+
+            // Trigger file download
+            const blob = new Blob([reportText], { type: 'text/plain;charset=utf-8' });
+            const downloadUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = downloadUrl;
+            a.download = `BajaBhais_Mitigation_Brief_${appState.currentActiveScenario}_${Date.now()}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(downloadUrl);
+
+            showToast('Brief Exported', 'Risk & Mitigation Brief downloaded successfully!');
+        }
+
+        // Approve Strategy Handler
+        function acknowledgeScenario() {
+            const scKey = appState.currentActiveScenario;
+            appState.scenarioApprovedStatus[scKey] = true;
+            updateApprovalButtonState();
+            
+            showToast('Strategy Approved', `Mitigation plan signed off by ${appState.roles[appState.activeRole].name}`);
+        }
+
+        function updateApprovalButtonState() {
+            const isApproved = appState.scenarioApprovedStatus[appState.currentActiveScenario];
+            const btn = document.getElementById('approveStrategyBtn');
+            const txt = document.getElementById('approveBtnText');
+
+            if (isApproved) {
+                btn.classList.remove('bg-neonRed', 'hover:bg-red-600');
+                btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500');
+                txt.innerText = 'Approved ✓ (Signed Off)';
+            } else {
+                btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
+                btn.classList.add('bg-neonRed', 'hover:bg-red-600');
+                txt.innerText = 'Approve Strategic Mitigation';
+            }
+        }
+
+        // Notification Toast Handler
+        function showToast(title, body) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastBody').innerText = body;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Scenario Selector Override for State Awareness
+        function selectScenario(scenarioKey) {
+            appState.currentActiveScenario = scenarioKey;
+            const data = appState.scenarios[scenarioKey];
+            if (!data) return;
+
+            document.getElementById('activeScenarioTitle').innerText = data.title;
+            document.getElementById('activeRiskScore').innerText = data.riskScore;
+            document.getElementById('costImpact').innerText = data.cost;
+            document.getElementById('productionImpact').innerText = data.production;
+            document.getElementById('deptImpact').innerText = data.dept;
+            document.getElementById('signoffRoles').innerText = data.signoff;
+
+            const stepsContainer = document.getElementById('mitigationSteps');
+            stepsContainer.innerHTML = '';
+
+            data.steps.forEach((step, idx) => {
+                stepsContainer.innerHTML += `
+                    <div class="p-3 bg-darkBase rounded-xl border border-darkBorder flex items-start space-x-3">
+                        <span class="w-5 h-5 rounded-full bg-neonRed/20 text-neonRed border border-neonRed/40 font-mono font-bold flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">
+                            ${idx + 1}
+                        </span>
+                        <div>
+                            <span class="font-bold text-white block text-xs font-orbitron">${step.role}</span>
+                            <span class="text-gray-300 text-xs">${step.action}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            updateApprovalButtonState();
+        }
+
+        // Loading Screen Handler
+        function startLoadingScreen() {
+            const bar = document.getElementById('loaderBar');
+            const percentText = document.getElementById('loaderPercentage');
+            const statusText = document.getElementById('loaderStatus');
+            const loaderScreen = document.getElementById('loadingScreen');
+            const appContainer = document.getElementById('appContainer');
+
+            let progress = 0;
+            const statusMessages = [
+                "Initializing Regional Hubs & AI Assessment Engine...",
+                "Loading Northeast Factory (Assam) Assembly Metrics...",
+                "Configuring Role Access for Maniatesh, Sai, Manimaran, Jaishwin...",
+                "Connecting 4,000 Units Target Tracking System...",
+                "Baja Bhais Command Center Ready!"
+            ];
+
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 12) + 5;
+                if (progress > 100) progress = 100;
+
+                bar.style.width = progress + '%';
+                percentText.innerText = progress + '%';
+
+                if (progress < 30) statusText.innerText = statusMessages[0];
+                else if (progress < 60) statusText.innerText = statusMessages[1];
+                else if (progress < 85) statusText.innerText = statusMessages[2];
+                else statusText.innerText = statusMessages[3];
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    statusText.innerText = statusMessages[4];
+
+                    setTimeout(() => {
+                        loaderScreen.classList.add('opacity-0');
+                        setTimeout(() => {
+                            loaderScreen.style.display = 'none';
+                            appContainer.classList.remove('opacity-0');
+                            renderCharts();
+                        }, 700);
+                    }, 400);
+                }
+            }, 180);
+        }
+
+        // Live Clock
+        function startLiveClock() {
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById('liveTime').innerText = now.toUTCString().slice(17, 25) + ' UTC';
+            }, 1000);
+        }
+
+        // Switch Navigation Tabs
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-neonRed', 'text-white', 'shadow-lg', 'glow-red-sm');
+                btn.classList.add('text-gray-400', 'border-transparent');
+            });
+
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'bg-neonRed', 'text-white', 'shadow-lg', 'glow-red-sm');
+                activeBtn.classList.remove('text-gray-400', 'border-transparent');
+            }
+
+            document.querySelectorAll('.tab-view').forEach(view => {
+                view.classList.add('hidden');
+            });
+
+            const targetView = document.getElementById(`view-${tabId}`);
+            if (targetView) {
+                targetView.classList.remove('hidden');
+            }
+
+            if (tabId === 'analytics') {
+                setTimeout(renderCharts, 100);
+            }
+        }
+
+        // Filter Regional Operations Cards
+        function filterRegion(regionKey) {
+            document.querySelectorAll('.region-pill').forEach(pill => {
+                pill.classList.remove('active', 'bg-neonRed', 'text-white', 'border-neonRed');
+                pill.classList.add('bg-darkBase', 'text-gray-300', 'border-darkBorder');
+            });
+            event.target.classList.add('active', 'bg-neonRed', 'text-white', 'border-neonRed');
+            event.target.classList.remove('bg-darkBase', 'text-gray-300', 'border-darkBorder');
+
+            const cards = document.querySelectorAll('.regional-card');
+            cards.forEach(card => {
+                if (regionKey === 'all' || card.getAttribute('data-region') === regionKey) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Render Alerts Feed
+        function renderAlerts(filterType = 'my-role') {
+            const container = document.getElementById('alertsContainer');
+            container.innerHTML = '';
+
+            const filteredAlerts = appState.alerts.filter(alert => {
+                if (filterType === 'all') return true;
+                return alert.roleTarget === appState.activeRole;
+            });
+
+            // Update badge counter
+            const unacknowledgedCount = appState.alerts.filter(a => !a.acknowledged && a.roleTarget === appState.activeRole).length;
+            document.getElementById('unreadAlertCount').innerText = unacknowledgedCount;
+
+            if (filteredAlerts.length === 0) {
+                container.innerHTML = `
+                    <div class="cyber-card p-8 rounded-2xl text-center text-gray-400">
+                        <i class="fa-solid fa-circle-check text-4xl text-green-400 mb-2"></i>
+                        <p class="font-bold text-white font-orbitron">No Pending Critical Alerts for your role!</p>
+                        <p class="text-xs text-gray-500 mt-1">All operational parameters for ${appState.roles[appState.activeRole].name} are running within nominal safety margins.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredAlerts.forEach(alert => {
+                const isAck = alert.acknowledged;
+                const cardHtml = `
+                    <div class="cyber-card p-5 rounded-2xl border-l-4 ${alert.severity === 'high' ? 'border-l-neonRed' : 'border-l-yellow-400'} ${isAck ? 'opacity-60' : ''}">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded font-bold uppercase ${alert.severity === 'high' ? 'bg-neonRed/20 text-neonRed border border-neonRed/40' : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/40'}">
+                                    ${alert.severity} RISK
+                                </span>
+                                <span class="text-xs font-mono text-gray-400">Target Role: <strong class="text-white">${alert.roleName}</strong></span>
+                            </div>
+                            <span class="text-xs font-mono text-gray-500">${alert.time}</span>
+                        </div>
+
+                        <h4 class="text-base font-bold font-orbitron text-white">${alert.title}</h4>
+                        <p class="text-xs text-gray-300 mt-1 mb-3">${alert.message}</p>
+
+                        <div class="bg-darkBase p-3 rounded-xl border border-darkBorder mb-3 text-xs">
+                            <span class="text-neonRed font-bold font-mono text-[10px] uppercase block mb-0.5">AI Recommended Action:</span>
+                            <span class="text-gray-300">${alert.aiSuggestion}</span>
+                        </div>
+
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-500 font-mono">Status: ${isAck ? '<span class="text-green-400">Acknowledged & Mitigated</span>' : '<span class="text-yellow-400">Pending Executive Action</span>'}</span>
+                            ${!isAck ? `<button onclick="acknowledgeAlert(${alert.id})" class="px-3 py-1.5 bg-neonRed hover:bg-red-600 text-white font-orbitron font-bold rounded-lg text-xs transition">Acknowledge Alert</button>` : '<i class="fa-solid fa-check text-green-400"></i>'}
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        function filterAlerts(type) {
+            document.querySelectorAll('.alert-filter-pill').forEach(btn => {
+                btn.classList.remove('active', 'bg-neonRed', 'text-white');
+                btn.classList.add('bg-darkBase', 'text-gray-300');
+            });
+            event.target.classList.add('active', 'bg-neonRed', 'text-white');
+            event.target.classList.remove('bg-darkBase', 'text-gray-300');
+            renderAlerts(type);
+        }
+
+        function acknowledgeAlert(alertId) {
+            const targetAlert = appState.alerts.find(a => a.id === alertId);
+            if (targetAlert) {
+                targetAlert.acknowledged = true;
+                renderAlerts();
+            }
+        }
+
+        function toggleAlertDrawer() {
+            switchTab('notifications');
+        }
+
+        function runCustomPrompt() {
+            const input = document.getElementById('customPromptInput').value;
+            if (!input.trim()) return;
+
+            document.getElementById('activeScenarioTitle').innerText = "AI Simulated Scenario: " + input;
+            document.getElementById('activeRiskScore').innerText = "Likelihood: 78% • Custom AI Evaluation";
+            document.getElementById('costImpact').innerText = "₹ 85 Lakhs Estimated";
+            document.getElementById('productionImpact').innerText = "-140 Units Buffer Shift";
+            document.getElementById('deptImpact').innerText = "Cross-Departmental";
+            document.getElementById('signoffRoles').innerText = "Executive Board";
+
+            const stepsContainer = document.getElementById('mitigationSteps');
+            stepsContainer.innerHTML = `
+                <div class="p-3 bg-darkBase rounded-xl border border-darkBorder">
+                    <span class="font-bold text-neonRed block text-xs font-orbitron mb-1">AI Generated Strategy Proposal for: "${input}"</span>
+                    <p class="text-xs text-gray-300">
+                        1. Deploy regional stock buffering in North and South warehouses.<br>
+                        2. Negotiate spot freight agreements with secondary logistics suppliers in NE India.<br>
+                        3. Review manufacturing throughput at Assam plant to optimize night shift assembly.
+                    </p>
+                </div>
+            `;
+            document.getElementById('customPromptInput').value = '';
+            showToast('AI Simulation Ready', 'Custom scenario evaluation rendered.');
+        }
+
+        function runCustomAiAnalysis() {
+            selectScenario('monsoon');
+            showToast('Audit Complete', 'Risk indexes updated based on live Northeast feeds.');
+        }
+
+        // Canvas Custom Chart Rendering
+        function renderCharts() {
+            renderProductionCanvasChart();
+            renderDistributionCanvasChart();
+        }
+
+        function renderProductionCanvasChart() {
+            const canvas = document.getElementById('productionChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = 40;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const quarters = ['Q1 Actual', 'Q2 Actual', 'Q3 Projected', 'Q4 Target'];
+            const targets = [1000, 2000, 3000, 4000];
+            const actuals = [920, 1840, 2950, 4000];
+
+            const maxVal = 4500;
+            const graphWidth = width - padding * 2;
+            const graphHeight = height - padding * 2;
+
+            ctx.strokeStyle = '#1e1e26';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 4; i++) {
+                const y = height - padding - (i * (graphHeight / 4));
+                ctx.beginPath();
+                ctx.moveTo(padding, y);
+                ctx.lineTo(width - padding, y);
+                ctx.stroke();
+
+                ctx.fillStyle = '#6b7280';
+                ctx.font = '10px Orbitron';
+                ctx.fillText((i * 1000) + ' u', 5, y + 3);
+            }
+
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            quarters.forEach((q, idx) => {
+                const x = padding + (idx * (graphWidth / 3));
+                const y = height - padding - ((targets[idx] / maxVal) * graphHeight);
+                if (idx === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            ctx.strokeStyle = '#ff2a2a';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            quarters.forEach((q, idx) => {
+                const x = padding + (idx * (graphWidth / 3));
+                const y = height - padding - ((actuals[idx] / maxVal) * graphHeight);
+                if (idx === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            quarters.forEach((q, idx) => {
+                const x = padding + (idx * (graphWidth / 3));
+                const y = height - padding - ((actuals[idx] / maxVal) * graphHeight);
+
+                ctx.fillStyle = '#ff2a2a';
+                ctx.beginPath();
+                ctx.arc(x, y, 5, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '11px Outfit';
+                ctx.fillText(actuals[idx] + ' u', x - 15, y - 10);
+
+                ctx.fillStyle = '#9ca3af';
+                ctx.font = '10px Orbitron';
+                ctx.fillText(q, x - 20, height - 10);
+            });
+        }
+
+        function renderDistributionCanvasChart() {
+            const canvas = document.getElementById('distributionChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+
+            const width = canvas.width;
+            const height = canvas.height;
+            const centerX = width / 2 - 40;
+            const centerY = height / 2;
+            const radius = Math.min(centerX, centerY) - 20;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const regions = [
+                { name: 'Northeast Hub', value: 1000, color: '#ff2a2a' },
+                { name: 'North India', value: 1200, color: '#dc2626' },
+                { name: 'South India', value: 1100, color: '#991b1b' },
+                { name: 'West India', value: 900, color: '#f59e0b' },
+                { name: 'East & Central', value: 800, color: '#38bdf8' }
+            ];
+
+            const total = 5000;
+            let startAngle = 0;
+
+            regions.forEach((slice, idx) => {
+                const sliceAngle = (slice.value / total) * (Math.PI * 2);
+
+                ctx.fillStyle = slice.color;
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, startAngle, startAngle + sliceAngle);
+                ctx.closePath();
+                ctx.fill();
+
+                startAngle += sliceAngle;
+            });
+
+            ctx.fillStyle = '#121218';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius * 0.55, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 12px Orbitron';
+            ctx.textAlign = 'center';
+            ctx.fillText('4,000 Target', centerX, centerY - 2);
+            ctx.fillStyle = '#ff2a2a';
+            ctx.font = '10px Rajdhani';
+            ctx.fillText('Quota Split', centerX, centerY + 12);
+
+            let legendY = 30;
+            const legendX = width - 110;
+            ctx.textAlign = 'left';
+
+            regions.forEach(item => {
+                ctx.fillStyle = item.color;
+                ctx.fillRect(legendX, legendY, 10, 10);
+
+                ctx.fillStyle = '#e2e8f0';
+                ctx.font = '10px Outfit';
+                ctx.fillText(item.name, legendX + 15, legendY + 9);
+
+                legendY += 22;
+            });
+        }
+
+        window.onresize = function() {
+            renderCharts();
+        };
+    </script>
+</body>
+</html>
